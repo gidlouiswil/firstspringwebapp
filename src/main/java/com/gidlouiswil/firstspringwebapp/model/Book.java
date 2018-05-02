@@ -12,6 +12,7 @@
 package com.gidlouiswil.firstspringwebapp.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -38,9 +39,10 @@ public class Book
     private String isbn;
 
     /**
-     *  The name of the publisher of a book.
+     *  The publisher of a book.
      */
-    private String publisher;
+    @OneToOne
+    private Publisher publisher;
 
     /**
      *  The set of authors of a book.
@@ -48,7 +50,7 @@ public class Book
     @ManyToMany
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
     inverseJoinColumns = @JoinColumn(name = "author_id"))
-    private Set<Author> authors_set;
+    private Set<Author> authors_set = new HashSet<>();
 
     /**
      *  Creates a new Book with no title, no ISBN, no publisher, no set of authors.
@@ -64,7 +66,7 @@ public class Book
      *	@param isbn the ISBN of the book.
      *  @param publisher the publisher of the book.
      */
-    public Book(String title, String isbn, String publisher)
+    public Book(String title, String isbn, Publisher publisher)
     {
         this.title = title;
         this.isbn = isbn;
@@ -78,7 +80,7 @@ public class Book
      *  @param publisher the publisher of the book.
      *  @param authorz_set the set of authors of the book.
      */
-    public Book(String title, String isbn, String publisher, Set<Author> authorz_set)
+    public Book(String title, String isbn, Publisher publisher, Set<Author> authors_set)
     {
         this.title = title;
         this.isbn = isbn;
@@ -123,7 +125,7 @@ public class Book
     /**
      *  Returns the publisher of the book.
      */
-    public String getPublisher()
+    public Publisher getPublisher()
     {
         return publisher;
     }
@@ -132,7 +134,7 @@ public class Book
      *  Sets the publisher of the book to the given value.
      *  @param publisher the new publisher of the book.
      */
-    public void setPublisher(String publisher)
+    public void setPublisher(Publisher publisher)
     {
         this.publisher = publisher;
     }

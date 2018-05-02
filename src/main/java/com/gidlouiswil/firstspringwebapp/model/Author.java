@@ -12,6 +12,7 @@
 package com.gidlouiswil.firstspringwebapp.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -41,7 +42,8 @@ public class Author
     /**
      *  The set of books written by an author.
      */
-    private Set<Book> books_set;
+    @ManyToMany(mappedBy = "authors_set")
+    private Set<Book> books_set = new HashSet<>();
 
     /**
      *  Creates a new Author with no first name, no last name, no publisher, no set of written books .
