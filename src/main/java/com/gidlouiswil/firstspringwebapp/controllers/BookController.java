@@ -40,7 +40,7 @@ public class BookController
      *  Adds to the model an attribute that has as value the list of all books stored in the database
      *  and returns the name of the view associated to the « /books » url .
      *  @param model the Model object.
-     *  @return the name of the view associated to the « /books » url.
+     *  @return the name of the view template associated to the « /books » url.
      */
     @RequestMapping("/books")
     public String getBooks(Model model)

@@ -40,7 +40,7 @@ public class AuthorController
      *  Adds to the model an attribute that has as value the list of all authors stored in the database
      *  and returns the name of the view associated to the « /authors » url .
      *  @param model the Model object.
-     *  @return the name of the view associated to the « /authors » url.
+     *  @return the name of the view template associated to the « /authors » url.
      */
     @RequestMapping("/authors")
     public String getAuthors(Model model)
