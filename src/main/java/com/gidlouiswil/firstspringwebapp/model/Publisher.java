@@ -91,4 +91,12 @@ public class Publisher
     {
         this.address = address;
     }
+
+    /**
+     *  Returns the identifier of the publisher.
+     */
+    public Long getId()
+    {
+        return id;
+    }
 }

@@ -153,4 +153,12 @@ public class Author
                 ", books_set=" + books_set +
                 '}';
     }
+
+    /**
+     *  Returns the identifier of the author.
+     */
+    public Long getId()
+    {
+        return id;
+    }
 }

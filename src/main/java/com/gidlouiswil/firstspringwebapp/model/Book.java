@@ -78,7 +78,7 @@ public class Book
      *  @param title the title of the book.
      *	@param isbn the ISBN of the book.
      *  @param publisher the publisher of the book.
-     *  @param authorz_set the set of authors of the book.
+     *  @param authors_set the set of authors of the book.
      */
     public Book(String title, String isbn, Publisher publisher, Set<Author> authors_set)
     {
@@ -153,5 +153,13 @@ public class Book
     public void setAuthorsSet(Set<Author> authors_set)
     {
         this.authors_set = authors_set;
+    }
+
+    /**
+     *  Returns the identifier of the book.
+     */
+    public Long getId()
+    {
+        return id;
     }
 }
