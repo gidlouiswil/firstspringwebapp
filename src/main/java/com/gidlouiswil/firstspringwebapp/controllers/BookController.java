@@ -37,7 +37,8 @@ public class BookController
     }
 
     /**
-     *  Creates a new DevBootstrap with the given author repository,the given book repository and the given publisher repository.
+     *  Adds to the model an attribute that has as value the list of all books stored in the database
+     *  and returns the name of the view associated to the « /books » url .
      *  @param model the Model object.
      *  @return the name of the view associated to the « /books » url.
      */
