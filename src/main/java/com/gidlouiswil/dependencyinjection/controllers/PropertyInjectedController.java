@@ -13,7 +13,7 @@ package com.gidlouiswil.dependencyinjection.controllers;
 import com.gidlouiswil.dependencyinjection.services.GreetingServiceImplementation;
 
 /**
- *  A dummy controller.
+ *  A class used to show dependency injection by using a public property.
  */
 public class PropertyInjectedController
 {
