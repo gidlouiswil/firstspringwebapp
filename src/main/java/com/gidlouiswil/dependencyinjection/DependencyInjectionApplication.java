@@ -10,7 +10,10 @@
 */
 package com.gidlouiswil.dependencyinjection;
 
+import com.gidlouiswil.dependencyinjection.controllers.ConstructorInjectedController;
 import com.gidlouiswil.dependencyinjection.controllers.DependencyInjectionController;
+import com.gidlouiswil.dependencyinjection.controllers.PropertyInjectedController;
+import com.gidlouiswil.dependencyinjection.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -30,5 +33,9 @@ public class DependencyInjectionApplication
 		ApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class, args);
          DependencyInjectionController controller = (DependencyInjectionController)context.getBean("dependencyInjectionController");
          controller.sayDependencyInjectionController();
+
+         System.out.println(context.getBean(PropertyInjectedController.class).sayGreeting());
+         System.out.println(context.getBean(SetterInjectedController.class).sayGreeting());
+         System.out.println(context.getBean(ConstructorInjectedController.class).sayGreeting());
 	}
 }

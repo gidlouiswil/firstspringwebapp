@@ -15,5 +15,5 @@ package com.gidlouiswil.dependencyinjection.services;
  */
 public interface GreetingService
 {
-    String sayGreeting();
+    public String sayGreeting();
 }

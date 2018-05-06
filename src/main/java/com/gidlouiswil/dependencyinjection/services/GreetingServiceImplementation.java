@@ -10,9 +10,12 @@
 */
 package com.gidlouiswil.dependencyinjection.services;
 
+import org.springframework.stereotype.Service;
+
 /**
  *  An implementation of the GreetingService interface.
  */
+@Service
 public class GreetingServiceImplementation implements GreetingService
 {
     /**

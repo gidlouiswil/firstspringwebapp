@@ -11,10 +11,13 @@
 package com.gidlouiswil.dependencyinjection.controllers;
 
 import com.gidlouiswil.dependencyinjection.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 /**
  *  A class used to show dependency injection by using a constructor.
  */
+@Controller
 public class ConstructorInjectedController
 {
     /**
@@ -35,7 +38,7 @@ public class ConstructorInjectedController
      *  Returns a greeting.
      *  @return a greeting.
      */
-    String sayGreeting()
+    public String sayGreeting()
     {
         return  greeting_service.sayGreeting();
     }

@@ -11,22 +11,26 @@
 package com.gidlouiswil.dependencyinjection.controllers;
 
 import com.gidlouiswil.dependencyinjection.services.GreetingServiceImplementation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 /**
  *  A class used to show dependency injection by using a public property.
  */
+@Controller
 public class PropertyInjectedController
 {
     /**
      *  The GreetingService.
      */
+    @Autowired
     public GreetingServiceImplementation greeting_service_impl;
 
     /**
      *  Returns a greeting.
      *  @return a greeting.
      */
-    String sayGreeting()
+    public String sayGreeting()
     {
         return greeting_service_impl.sayGreeting();
     }
