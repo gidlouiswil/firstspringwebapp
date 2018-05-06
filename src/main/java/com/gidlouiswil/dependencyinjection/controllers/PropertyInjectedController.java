@@ -1,6 +1,6 @@
 /*
 =====================================================================================================
-*	FileName	:	DependencyInjectionController.
+*	FileName	:	PropertyInjectedController.
 *	FileType	:	Java.
 *	Author		:	Gid Lou Iswil.
 *	Made with	:	IntelliJ IDEA 2017.
@@ -10,21 +10,24 @@
 */
 package com.gidlouiswil.dependencyinjection.controllers;
 
-import org.springframework.stereotype.Controller;
+import com.gidlouiswil.dependencyinjection.services.GreetingServiceImplementation;
 
 /**
  *  A dummy controller.
  */
-@Controller
-public class DependencyInjectionController
+public class PropertyInjectedController
 {
     /**
-     *  Returns an empty string.
-     *  @return an empty string.
+     *  The GreetingService.
      */
-    public String sayDependencyInjectionController()
+    public GreetingServiceImplementation greeting_service_impl;
+
+    /**
+     *  Returns a greeting.
+     *  @return a greeting.
+     */
+    String sayGreeting()
     {
-        System.out.println("Dependency Injection Controller");
-        return "";
+        return greeting_service_impl.sayGreeting();
     }
 }

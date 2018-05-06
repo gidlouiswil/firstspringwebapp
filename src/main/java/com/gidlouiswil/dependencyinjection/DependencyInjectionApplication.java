@@ -29,6 +29,6 @@ public class DependencyInjectionApplication
 	 {
 		ApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class, args);
          DependencyInjectionController controller = (DependencyInjectionController)context.getBean("dependencyInjectionController");
-         controller.sayHello();
+         controller.sayDependencyInjectionController();
 	}
 }
