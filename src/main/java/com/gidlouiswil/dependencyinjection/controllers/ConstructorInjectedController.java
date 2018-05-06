@@ -11,7 +11,7 @@
 package com.gidlouiswil.dependencyinjection.controllers;
 
 import com.gidlouiswil.dependencyinjection.services.GreetingService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -29,7 +29,7 @@ public class ConstructorInjectedController
      *  Creates a new ConstructorInjectedController with the given GreetingService.
      *  @param greeting_service the new GreetingService.
      */
-    public ConstructorInjectedController(GreetingService greeting_service)
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greeting_service)
     {
         this.greeting_service = greeting_service;
     }
