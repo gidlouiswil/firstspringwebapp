@@ -12,6 +12,7 @@ package com.gidlouiswil.dependencyinjection.controllers;
 
 import com.gidlouiswil.dependencyinjection.services.GreetingServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -24,6 +25,7 @@ public class PropertyInjectedController
      *  The GreetingService.
      */
     @Autowired
+    @Qualifier("greetingServiceImplementation")
     public GreetingServiceImplementation greeting_service_impl;
 
     /**

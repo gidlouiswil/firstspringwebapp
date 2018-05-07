@@ -34,6 +34,7 @@ public class DependencyInjectionApplication
          DependencyInjectionController controller = (DependencyInjectionController)context.getBean("dependencyInjectionController");
          controller.sayDependencyInjectionController();
 
+         System.out.println(controller.sayDependencyInjectionController());
          System.out.println(context.getBean(PropertyInjectedController.class).sayGreeting());
          System.out.println(context.getBean(SetterInjectedController.class).sayGreeting());
          System.out.println(context.getBean(ConstructorInjectedController.class).sayGreeting());

@@ -10,6 +10,7 @@
 */
 package com.gidlouiswil.dependencyinjection.controllers;
 
+import com.gidlouiswil.dependencyinjection.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -18,6 +19,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class DependencyInjectionController
 {
+    private GreetingService greeting_service;
+
+    public DependencyInjectionController(GreetingService greeting_service)
+    {
+        this.greeting_service = greeting_service;
+    }
+
     /**
      *  Returns an empty string.
      *  @return an empty string.
@@ -25,6 +33,6 @@ public class DependencyInjectionController
     public String sayDependencyInjectionController()
     {
         System.out.println("Dependency Injection Controller");
-        return "";
+        return greeting_service.sayGreeting();
     }
 }
