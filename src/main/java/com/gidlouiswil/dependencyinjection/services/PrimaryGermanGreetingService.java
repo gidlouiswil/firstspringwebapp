@@ -1,6 +1,6 @@
 /*
 =====================================================================================================
-*	FileName	:	PrimaryGreetingService.
+*	FileName	:	PrimaryGermanGreetingService.
 *	FileType	:	Java.
 *	Author		:	Gid Lou Iswil.
 *	Made with	:	IntelliJ IDEA 2017.
@@ -19,18 +19,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Primary
-@Profile("en")
-public class PrimaryGreetingService implements GreetingService
+@Profile("de")
+public class PrimaryGermanGreetingService implements GreetingService
 {
-    private GreetingRepository greeting_repository;
+    private  GreetingRepository Greeting_repository;
 
-    /**
-     *  Creae.
-     *  @return a greeting.
-     */
-    public PrimaryGreetingService(GreetingRepository greeting_repository)
+    public PrimaryGermanGreetingService(GreetingRepository greeting_repository)
     {
-        this.greeting_repository = greeting_repository;
+        Greeting_repository = greeting_repository;
     }
 
     /**
@@ -40,6 +36,6 @@ public class PrimaryGreetingService implements GreetingService
     @Override
     public String sayGreeting()
     {
-        return greeting_repository.getEnglishGreeting();
+        return Greeting_repository.getGermanGreeting();
     }
 }
