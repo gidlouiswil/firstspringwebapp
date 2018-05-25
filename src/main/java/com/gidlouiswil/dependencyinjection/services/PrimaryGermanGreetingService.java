@@ -17,9 +17,9 @@ import org.springframework.stereotype.Service;
 /**
  *  An implementation of the GreetingService interface.
  */
-@Service
+/*@Service
 @Primary
-@Profile("de")
+@Profile("de")*/
 public class PrimaryGermanGreetingService implements GreetingService
 {
     private  GreetingRepository Greeting_repository;
